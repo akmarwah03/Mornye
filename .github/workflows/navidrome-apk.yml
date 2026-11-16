@@ -40,8 +40,8 @@ jobs:
           echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
       - name: Test Subsonic streaming and downloads
         run: |
-          dart format --output=none --set-exit-if-changed lib/services/network_storage_subsonic.dart test/subsonic_storage_test.dart test/support/subsonic_fixture.dart integration_test/subsonic_playback_test.dart lib/services/subsonic_playback_deck.dart lib/services/music_player_runtime.dart lib/services/network_storage_service.dart test/subsonic_playback_deck_test.dart test/playback_deck_selection_test.dart
-          flutter test test/subsonic_storage_test.dart test/link_subsonic_download_test.dart test/subsonic_download_backpressure_test.dart test/subsonic_playback_deck_test.dart test/playback_deck_selection_test.dart test/music_player_runtime_test.dart test/music_player_gapless_test.dart test/exclusive_output_deck_test.dart
+          dart format --output=none --set-exit-if-changed lib/services/network_storage_subsonic.dart test/subsonic_storage_test.dart test/support/subsonic_fixture.dart integration_test/subsonic_playback_test.dart lib/services/subsonic_playback_deck.dart lib/services/music_player_runtime.dart lib/services/network_storage_service.dart test/subsonic_playback_deck_test.dart test/playback_deck_selection_test.dart lib/services/music_playback_deck.dart lib/services/music_player_service.dart test/music_playback_network_transport_test.dart test/support/music_player_automix_harness.dart
+          flutter test test/subsonic_storage_test.dart test/link_subsonic_download_test.dart test/subsonic_download_backpressure_test.dart test/subsonic_playback_deck_test.dart test/playback_deck_selection_test.dart test/music_player_runtime_test.dart test/music_player_gapless_test.dart test/exclusive_output_deck_test.dart test/music_playback_network_transport_test.dart test/music_player_usb_transport_test.dart test/music_player_playback_failures_test.dart
       - name: Install Android and Rust build prerequisites
         run: |
           yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
